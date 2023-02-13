@@ -23,9 +23,11 @@
         </form>
 
         <hr>
-
+        {% comment %} example of control flow in html concept {% endcomment %}
+        {% comment %} loops through each todo in the todo list {% endcomment %}
         {% for todo in todo_list %}
         <div class="ui segment">
+            {% comment %} example of format strings in html concept {% endcomment %}
             <p class="ui big header">{{todo.id }} | {{ todo.title }}</p>
 
             {% if todo.complete == False %}
@@ -33,7 +35,7 @@
             {% else %}
             <span class="ui green label">Completed</span>
             {% endif %}
-
+            {% comment %} button concept example {% endcomment %}
             <a class="ui blue button" href="/update/{{ todo.id }}">Update</a>
             <a class="ui red button" href="/delete/{{ todo.id }}">Delete</a>
         </div>
